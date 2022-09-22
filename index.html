@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Products</title>
+    <title>Lissy</title>
     <link rel="stylesheet" href="/static/index.css">
 </head>
 <body> 
@@ -19,112 +19,10 @@
 
         <h2 class="products__title">Productos</h2>
         
-        <div class="products">
+        <div id="products" class="products">
 
-            <!-- product1 -->
-            <div class="products__item">
-                
-                <img class="products__item__image" src="../assets/panties_violetta_2.png" alt="">
+            
 
-                <div class="products__item__brand">violetta</div>
-
-                <div class="products__item__name">Truza cachetero</div>
-
-                <div class="products__item__price">s/25</div>
-
-                <button class="products__item__button">Contactar</button>
-
-            </div>
-            <!-- product2 -->
-
-            <div class="products__item">
-                
-                <img class="products__item__image" src="../assets/panties_violetta_2.png" alt="">
-
-                <div class="products__item__brand">violetta</div>
-
-                <div class="products__item__name">Truza cachetero</div>
-
-                <div class="products__item__price">s/25</div>
-
-                <button class="products__item__button">Ver producto</button>
-
-            </div>
-            <!-- product3 -->
-
-            <div class="products__item">
-                
-                <img class="products__item__image" src="../assets/panties_violetta_2.png" alt="">
-
-                <div class="products__item__brand">violetta</div>
-
-                <div class="products__item__name">Truza cachetero</div>
-
-                <div class="products__item__price">s/25</div>
-
-                <button class="products__item__button">Ver producto</button>
-
-            </div>
-            <!-- product4 -->
-
-            <div class="products__item">
-                
-                <img class="products__item__image" src="../assets/panties_violetta_2.png" alt="">
-
-                <div class="products__item__brand">violetta</div>
-
-                <div class="products__item__name">Truza cachetero</div>
-
-                <div class="products__item__price">s/25</div>
-
-                <button class="products__item__button">Ver producto</button>
-
-            </div>
-            <!-- product5 -->
-
-            <div class="products__item">
-                
-                <img class="products__item__image" src="../assets/panties_violetta_2.png" alt="">
-
-                <div class="products__item__brand">violetta</div>
-
-                <div class="products__item__name">Truza cachetero</div>
-
-                <div class="products__item__price">s/25</div>
-
-                <button class="products__item__button">Ver producto</button>
-
-            </div>
-            <!-- product6 -->
-
-            <div class="products__item">
-                
-                <img class="products__item__image" src="../assets/panties_violetta_2.png" alt="">
-
-                <div class="products__item__brand">violetta</div>
-
-                <div class="products__item__name">Truza cachetero</div>
-
-                <div class="products__item__price">s/25</div>
-
-                <button class="products__item__button">Ver producto</button>
-
-            </div>
-
-            <!-- 7 -->
-            <div class="products__item">
-                
-                <img class="products__item__image" src="../assets/panties_violetta_2.png" alt="">
-
-                <div class="products__item__brand">violetta</div>
-
-                <div class="products__item__name">Truza cachetero</div>
-
-                <div class="products__item__price">s/25</div>
-
-                <button class="products__item__button">Ver producto</button>
-
-            </div>
 
         </div>
     </div>
@@ -135,6 +33,25 @@
 
     </footer>
 
+    
+
+    <template id ="template-product">
+
+        <div class="products__item">
+                
+            <img class="products__item__image" src="" alt="">
+
+            <div class="products__item__brand"></div>
+
+            <div class="products__item__name"></div>
+
+            <div class="products__item__price"></div>
+
+            <button class="products__item__button">Contactar</button>
+
+        </div>
+
+    </template>
     <script type="module" src="/index.js"></script>
 </body>
 </html>
