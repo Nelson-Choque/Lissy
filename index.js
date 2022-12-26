@@ -1,81 +1,28 @@
 
 
-const $templateProduct= document.getElementById("template-product").content;
-let $fragment= document.createDocumentFragment();
-const $products= document.getElementById("products");
+const express = require('express');
 
-(()=>{
+const app = express();
 
-    console.log("hola")
-
-    showProducts()
-
-})()
+const {infoCursos} = require('./infoCursos')
 
 
+app.listen(3000, ()=>{
 
-async function getDataProducts(){
+    console.log("-el servidor esta escuchando en el puerto 3000")
 
-    const dataProducts= await fetch('/productos.json')
-    .then((data)=>{
-        
-        return data.json();
-
-    })
+} )
 
 
-    return dataProducts;
-}
+app.get( "/", (req,res)=>{
+
+    res.send("<h2>timy sal de mi mesa!!!</h2>")
+
+} )
 
 
-async function showProducts(){
+app.get( "/api/cursos", (req,res)=>{
 
+    res.send(infoCursos)
 
-    const {products} = await getDataProducts();
-
-    let {templateImage,templateBrand,templateName,templatePrice} = getTemplateElementsProducts();
-
-    let array = []
-    
-    
-    products.forEach(product => {
-
-
-
-        templateImage.setAttribute("src",product.image)
-        templateBrand.textContent = product.brand
-        templateName.textContent = product.name
-        templatePrice.textContent = product.price
-
-        let $clone = document.importNode($templateProduct,true);
-
-        $fragment.appendChild($clone)
-
-        
-    });
-
-    console.log($fragment)
-    console.log($products)
-    $products.appendChild($fragment)
-
-
-
-}
-
-function getTemplateElementsProducts(){
-
-    let templateImage = $templateProduct.querySelector(".products__item__image")
-    let templateBrand = $templateProduct.querySelector(".products__item__brand")
-    let templateName= $templateProduct.querySelector(".products__item__name")
-    let templatePrice = $templateProduct.querySelector(".products__item__price")
-
-    return {
-        templateImage,
-        templateBrand,
-        templateName,
-        templatePrice
-    }
-
-
-
-}
+} )
