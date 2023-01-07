@@ -1,10 +1,21 @@
 
 
 const express = require('express');
+const ejs = require('ejs');
+const connection = require('./dbconfig/dbconfig')
+
+const routerProgramacion = require('./routers/programacion');
+
 
 const app = express();
 
-const {infoCursos} = require('./infoCursos')
+//configuration app
+app.set("view engine","ejs");
+
+app.use(express.static(__dirname + '/public'));
+
+
+app.use('/api/cursos',routerProgramacion);
 
 
 app.listen(3000, ()=>{
@@ -16,13 +27,16 @@ app.listen(3000, ()=>{
 
 app.get( "/", (req,res)=>{
 
-    res.send("<h2>timy sal de mi mesa!!!</h2>")
+    res.render('index');
+  
 
 } )
 
 
-app.get( "/api/cursos", (req,res)=>{
+app.get("/productos", (req,res)=>{
 
-    res.send(infoCursos)
 
-} )
+    res.render('productos')
+
+})
+
